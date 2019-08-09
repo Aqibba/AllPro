@@ -1,6 +1,6 @@
-# mt-app
+# meit
 
-> My super Nuxt.js project
+> My groundbreaking Nuxt.js project
 
 ## Build Setup
 
