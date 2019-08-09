@@ -1,6 +1,7 @@
 <template>
   <div class="page-register">
     <article class="header">
+      <!-- 注册头部 -->
       <header>
         <a href="/" class="site-logo" />
         <span class="login">
@@ -62,9 +63,13 @@ export default {
       rules: {
         name: [
           {
+            // 是否为必选项
             required: true,
+            // 类型
             type: 'string',
+            // 不填写的时候提示
             message: '请输入昵称',
+            // 什么时候触发
             trigger: 'blur'
           }
         ],
@@ -90,11 +95,16 @@ export default {
             trigger: 'blur'
           },
           {
+            // 二次验证, 自定义规则
+            // rule 规则, value 值
             validator: (rule, value, callback) => {
+              // 输入框为空时
               if (value === '') {
                 callback(new Error('请再次输入密码'))
+                // 两次密码不一样
               } else if (value !== this.ruleForm.pwd) {
                 callback(new Error('两次输入密码不一致'))
+                // 全对时
               } else {
                 callback()
               }
